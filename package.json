@@ -15,43 +15,50 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onFileSystem:memfs",
-		"onCommand:memfs.workspaceInit",
-		"onCommand:memfs.init",
-		"onCommand:memfs.reset"
+		"*"
 	],
 	"main": "./out/src/extension",
 	"contributes": {
 		"commands": [
 			{
-				"command": "memfs.workspaceInit",
-				"title": "Setup Workspace",
-				"category": "MemFS"
+				"command": "fsp.stat",
+				"title": "Test vscode.workspace.fs.stat()",
+				"category": "FSP"
 			},
 			{
-				"command": "memfs.init",
-				"title": "Create Files",
-				"category": "MemFS"
+				"command": "fsp.readDirectory",
+				"title": "Test vscode.workspace.fs.readDirectory()",
+				"category": "FSP"
 			},
 			{
-				"command": "memfs.reset",
-				"title": "Delete Files",
-				"category": "MemFS"
+				"command": "fsp.readFile",
+				"title": "Test vscode.workspace.fs.readFile()",
+				"category": "FSP"
 			},
 			{
-				"command": "memfs.deleteFile",
-				"title": "Delete \"file.txt\"",
-				"category": "MemFS"
+				"command": "fsp.createDirectory",
+				"title": "Test vscode.workspace.fs.createDirectory()",
+				"category": "FSP"
 			},
 			{
-				"command": "memfs.addFile",
-				"title": "Add \"file.txt\"",
-				"category": "MemFS"
+				"command": "fsp.writeFile",
+				"title": "Test vscode.workspace.fs.writeFile()",
+				"category": "FSP"
 			},
 			{
-				"command": "memfs.openFile",
-				"title": "Open \"file.txt\"",
-				"category": "MemFS"
+				"command": "fsp.rename",
+				"title": "Test vscode.workspace.fs.rename()",
+				"category": "FSP"
+			},
+			{
+				"command": "fsp.copy",
+				"title": "Test vscode.workspace.fs.copy()",
+				"category": "FSP"
+			},
+			{
+				"command": "fsp.delete",
+				"title": "Test vscode.workspace.fs.delete()",
+				"category": "FSP"
 			}
 		]
 	},
