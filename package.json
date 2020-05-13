@@ -1,0 +1,71 @@
+{
+	"name": "vscode-file-system-provider",
+	"displayName": "VSCode - file system provider",
+	"description": "Based on https://github.com/microsoft/vscode-extension-samples/tree/master/fsprovider-sample",
+	"version": "0.0.1",
+	"publisher": "test",
+	"repository": {
+		"url": "https://github.wdf.sap.corp/D045154/vscode-file-system-provider.git",
+		"type": "git"
+	},
+	"engines": {
+		"vscode": "^1.32.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onFileSystem:memfs",
+		"onCommand:memfs.workspaceInit",
+		"onCommand:memfs.init",
+		"onCommand:memfs.reset"
+	],
+	"main": "./out/src/extension",
+	"contributes": {
+		"commands": [
+			{
+				"command": "memfs.workspaceInit",
+				"title": "Setup Workspace",
+				"category": "MemFS"
+			},
+			{
+				"command": "memfs.init",
+				"title": "Create Files",
+				"category": "MemFS"
+			},
+			{
+				"command": "memfs.reset",
+				"title": "Delete Files",
+				"category": "MemFS"
+			},
+			{
+				"command": "memfs.deleteFile",
+				"title": "Delete \"file.txt\"",
+				"category": "MemFS"
+			},
+			{
+				"command": "memfs.addFile",
+				"title": "Add \"file.txt\"",
+				"category": "MemFS"
+			},
+			{
+				"command": "memfs.openFile",
+				"title": "Open \"file.txt\"",
+				"category": "MemFS"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"lint": "tslint -p ./",
+		"watch": "tsc -watch -p ./"
+	},
+	"devDependencies": {
+		"@types/node": "^12.12.0",
+		"@types/vscode": "^1.32.0",
+		"tslint": "^5.19.0",
+		"typescript": "^3.8.3",
+		"vsce": "^1.75.0"
+	}
+}
