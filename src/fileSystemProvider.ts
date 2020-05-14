@@ -104,6 +104,10 @@ export class MemFS implements vscode.FileSystemProvider {
 
     // --- manage files/folders
 
+    copy(sourceUri: vscode.Uri, targetUri: vscode.Uri, options: { overwrite: boolean }): void {
+        this.writeFile(targetUri, this.readFile(sourceUri), {create: true, overwrite: options.overwrite});
+    }
+
     rename(oldUri: vscode.Uri, newUri: vscode.Uri, options: { overwrite: boolean }): void {
 
         if (!options.overwrite && this._lookup(newUri, true)) {
